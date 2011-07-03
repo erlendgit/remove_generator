@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Install file.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function remove_generator_uninstall() {
+  variable_del('remove_generator');
+}
