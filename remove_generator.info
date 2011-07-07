@@ -1,5 +1,3 @@
 name = Remove Generator
-description = Remove the Generator META tag.
+description = Enable to remove the Generator META tag. No configuration required!
 core = 7.x
-version = 7.x-1.0
-configure = admin/config/search/remove-generator

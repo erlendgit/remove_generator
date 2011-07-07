@@ -5,38 +5,9 @@
  */
 
 /**
- * Implements hook_menu().
- */
-function remove_generator_menu() {
-  $items['admin/config/search/remove-generator'] = array(
-    'title' => 'Remove Generator META tag',
-    'description' => 'Enable or disable the Generator META tag for your site.',
-    'page callback' => 'drupal_get_form',
-    'page arguments' => array('remove_generator_settings'),
-    'access arguments' => array('administer site configuration'),
-    'weight' => 5,
-  );
-  return $items;
-}
-
-/**
- * Form builder; Configure settings.
- */
-function remove_generator_settings($form, &$form_state) {
-  $form['remove_generator'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Remove Generator META tag'),
-    '#description' => t('Enable or disable the Generator META tag for your site.'),
-    '#default_value' => variable_get('remove_generator', 1),
-  );
-  return $form = system_settings_form($form);
-}
-
-/**
  * Implements hook_enable().
  */
 function remove_generator_enable() {
-  variable_set('remove_generator', 1);
   drupal_set_message(t('The Generator META tag has been removed.'));
 }
 
@@ -44,7 +15,6 @@ function remove_generator_enable() {
  * Implements hook_disable().
  */
 function remove_generator_disable() {
-  variable_set('remove_generator', 0);
   drupal_set_message(t('The Generator META tag has been restored.'));
 }
 
@@ -52,10 +22,8 @@ function remove_generator_disable() {
  * Implements hook_html_head_alter().
  */
 function remove_generator_html_head_alter(&$head_elements) {
-  if (variable_get('remove_generator', NULL)) {
-    // Remove Generator META tag
-    if (isset($head_elements['system_meta_generator'])) {
-      unset($head_elements['system_meta_generator']);
-    }
+  // Remove Generator META tag.
+  if (isset($head_elements['system_meta_generator'])) {
+    unset($head_elements['system_meta_generator']);
   }
 }

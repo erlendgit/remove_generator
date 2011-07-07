@@ -1,9 +1,9 @@
-Remove the Generator META tag.
+Remove Generator META tag.
 
 USAGE
 -----
-- Enable the module to remove the Generator META tag.
-- Disable the module to restore the Generator META tag.
-- Configure at admin/config/search/remove-generator.
+- Enable to remove the Generator META tag.
+- Disable to restore the Generator META tag.
+- No configuration required!
 
-Represent Drupal whenever you can!
+Please, represent Drupal whenever possible!
