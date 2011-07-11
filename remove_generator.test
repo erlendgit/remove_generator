@@ -11,7 +11,7 @@ class RemoveGeneratorTestCase extends DrupalWebTestCase {
   public static function getInfo() {
     return array(
       'name' => 'Remove Generator',
-      'description' => 'Tests removal Generator META tag.',
+      'description' => 'Tests removal of the Generator META tag.',
       'group' => 'Remove Generator',
     );
   }

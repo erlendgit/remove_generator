@@ -1,4 +1,4 @@
-Remove Generator META tag.
+Remove Generator META tag
 
 USAGE
 -----
