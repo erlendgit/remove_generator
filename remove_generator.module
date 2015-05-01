@@ -27,3 +27,15 @@ function remove_generator_html_head_alter(&$head_elements) {
     unset($head_elements['system_meta_generator']);
   }
 }
+
+/**
+ * Implement hook_metatag_info_alter().
+ * @param array $info
+ */
+function remove_generator_metatag_info_alter(&$info) {
+  // Explain why the generator is not rendered
+  $info['tags']['generator']['label'] = t('Generator (Disabled by "Remove Generator" module)');
+  
+// And disable the tag by means of a fake classname.
+  $info['tags']['generator']['class'] = 'ImaginaryKillGeneratorMetatagClass';
+}
